@@ -6,7 +6,6 @@ public class CameraController : MonoBehaviour
 {
     // Reference
     Camera mainCamera;
-    //public Camera weaponCamera;
 
     // Specification
     public float sensX = 1f;
@@ -39,12 +38,6 @@ public class CameraController : MonoBehaviour
 
     void FixedUpdate()
     {
-        float addedFov = rb.velocity.magnitude - 3.44f;
-        fov = Mathf.Lerp(fov, baseFov + addedFov, 0.5f);
-        fov = Mathf.Clamp(fov, baseFov, maxFov);
-        mainCamera.fieldOfView = fov;
-        //weaponCamera.fieldOfView = fov;
-
         currentLook = Vector2.Lerp(currentLook, currentLook + sway, 0.8f);
         curTilt = Mathf.LerpAngle(curTilt, wishTilt * wallRunTilt, 0.05f);
 

@@ -5,26 +5,30 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     //Ground
-    float groundSpeed = 4f;
-    float runSpeed = 6f;
-    float grAccel = 20f;
+    [Header("Ground")]
+    public float groundSpeed = 4f;
+    public float runSpeed = 6f;
+    public float grAccel = 20f;
 
     //Air
-    float airSpeed = 5f;
-    float airAccel = 20f;
+    [Header("Air")]
+    public float airSpeed = 5f;
+    public float airAccel = 20f;
 
     //Jump
-    float jumpUpSpeed = 8f;
-    float dashSpeed = 6f;
+    [Header("Jump")]
+    public float jumpUpSpeed = 8f;
+    public float dashSpeed = 6f;
 
     //Wall
-    float wallSpeed = 10f;
-    float wallAccel = 6f;
-    float wallRunTime = 3f;
-    float wallStickiness = 66f;
-    float wallStickDistance = 1f;
-    float wallFloorBarrier = 40f;
-    float wallBanTime = 4f;
+    [Header("Wall")]
+    public float wallSpeed = 10f;
+    public float wallAccel = 6f;
+    public float wallRunTime = 3f;
+    public float wallStickiness = 66f;
+    public float wallStickDistance = 1f;
+    public float wallFloorBarrier = 40f;
+    public float wallBanTime = 4f;
     Vector3 bannedGroundNormal;
 
     //Cooldowns

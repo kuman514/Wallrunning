@@ -276,6 +276,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184e184a6fde6484e9078edaf6de6639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundSpeed: 8
+  runSpeed: 10
+  grAccel: 20
+  airSpeed: 12
+  airAccel: 20
+  jumpUpSpeed: 13
+  dashSpeed: 9
+  wallSpeed: 15
+  wallAccel: 8
+  wallRunTime: 3
+  wallStickiness: 66
+  wallStickDistance: 1
+  wallFloorBarrier: 40
+  wallBanTime: 4
 --- !u!1 &610296486
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +305,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &610296487
 Transform:
   m_ObjectHideFlags: 0
@@ -393,13 +407,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 20.76, z: -9.84}
+  m_LocalRotation: {x: 0.6392664, y: -0.0671896, z: 0.08007345, w: 0.76184803}
+  m_LocalPosition: {x: 0, y: 44.49, z: -9.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 80, y: 0, z: 12}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +466,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -496,6 +510,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116820baaba6d7441a737ec6823abe67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sensX: 1
+  sensY: 1
+  baseFov: 90
+  maxFov: 140
+  wallRunTilt: 15
 --- !u!1 &1798073508
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,4 +701,80 @@ Transform:
   m_Children: []
   m_Father: {fileID: 610296487}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1913404189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1913404192}
+  - component: {fileID: 1913404191}
+  - component: {fileID: 1913404190}
+  m_Layer: 0
+  m_Name: Terrain
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!154 &1913404190
+TerrainCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913404189}
+  m_Material: {fileID: 0}
+  m_Enabled: 1
+  m_TerrainData: {fileID: 15600000, guid: d043017070fda2f42ad4fc649c3ec808, type: 2}
+  m_EnableTreeColliders: 1
+--- !u!218 &1913404191
+Terrain:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913404189}
+  m_Enabled: 1
+  serializedVersion: 6
+  m_TerrainData: {fileID: 15600000, guid: d043017070fda2f42ad4fc649c3ec808, type: 2}
+  m_TreeDistance: 5000
+  m_TreeBillboardDistance: 50
+  m_TreeCrossFadeLength: 5
+  m_TreeMaximumFullLODCount: 50
+  m_DetailObjectDistance: 80
+  m_DetailObjectDensity: 1
+  m_HeightmapPixelError: 5
+  m_SplatMapDistance: 1000
+  m_HeightmapMaximumLOD: 0
+  m_ShadowCastingMode: 2
+  m_DrawHeightmap: 1
+  m_DrawInstanced: 0
+  m_DrawTreesAndFoliage: 1
+  m_ReflectionProbeUsage: 1
+  m_MaterialTemplate: {fileID: 10652, guid: 0000000000000000f000000000000000, type: 0}
+  m_BakeLightProbesForTrees: 1
+  m_PreserveTreePrototypeLayers: 0
+  m_DeringLightProbesForTrees: 1
+  m_ScaleInLightmap: 0.0256
+  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
+  m_GroupingID: 0
+  m_RenderingLayerMask: 1
+  m_AllowAutoConnect: 1
+--- !u!4 &1913404192
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913404189}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -500, y: 0, z: -500}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
