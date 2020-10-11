@@ -31,6 +31,9 @@ public class PlayerMove : MonoBehaviour
     public float wallBanTime = 4f;
     Vector3 bannedGroundNormal;
 
+    [Header("Soundsets")]
+    public AudioClip engine;
+
     //Cooldowns
     bool canJump = true;
     bool canDJump = true;
@@ -68,7 +71,20 @@ public class PlayerMove : MonoBehaviour
 
     void OnGUI()
     {
-        GUILayout.Label("Speed: " + new Vector3(rb.velocity.x, 0, rb.velocity.z).magnitude);
+        GUILayout.Label("Speed: " + (new Vector3(rb.velocity.x, 0, rb.velocity.z).magnitude * 3600 / 1000) + "km/h");
+        switch (mode)
+        {
+            case Mode.Walking:
+                GUILayout.Label("Walking");
+                break;
+            case Mode.Flying:
+                GUILayout.Label("Flying");
+                break;
+            case Mode.Wallruning:
+                GUILayout.Label("Wallruning");
+                break;
+
+        }
     }
 
     void Update()

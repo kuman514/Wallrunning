@@ -276,15 +276,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184e184a6fde6484e9078edaf6de6639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundSpeed: 8
-  runSpeed: 10
-  grAccel: 20
-  airSpeed: 12
-  airAccel: 20
-  jumpUpSpeed: 13
-  dashSpeed: 9
-  wallSpeed: 15
-  wallAccel: 8
+  groundSpeed: 50
+  runSpeed: 50
+  grAccel: 22
+  airSpeed: 54
+  airAccel: 1
+  jumpUpSpeed: 10
+  dashSpeed: 10
+  wallSpeed: 56
+  wallAccel: 1
   wallRunTime: 3
   wallStickiness: 66
   wallStickDistance: 1
